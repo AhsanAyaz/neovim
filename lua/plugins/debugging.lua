@@ -26,7 +26,7 @@ return {
       dap.adapters.chrome = {
         type = "executable",
         command = "node",
-        args = {os.getenv("HOME") .. "/.config/nvim/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
+        args = {os.getenv("HOME") .. "/vscode-chrome-debug/out/src/chromeDebug.js"} -- TODO adjust
       }
 
       dap.configurations.javascript = { -- change this to javascript if needed
