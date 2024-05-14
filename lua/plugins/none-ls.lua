@@ -28,7 +28,7 @@ return {
         formatting.stylua,
         eslint_d.with({
           condition = function(utils)
-            return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
+            return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" })
           end,
         }),
       },
