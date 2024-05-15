@@ -13,20 +13,12 @@ return {
 			svelte = { "eslint_d" },
 			python = { "pylint" },
 		}
-		local lint_progress = function()
-			local linters = require("lint").get_running()
-			if #linters == 0 then
-				return "󰦕"
-			end
-			return "󱉶 " .. table.concat(linters, ", ")
-		end
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = lint_augroup,
 			callback = function()
-				lint_progress()
 				lint.try_lint()
 			end,
 		})
