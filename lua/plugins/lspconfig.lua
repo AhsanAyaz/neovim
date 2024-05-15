@@ -10,14 +10,6 @@ return {
 		local util = require("lspconfig.util")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		-- Disable inline error messages
-		vim.diagnostic.config({
-			virtual_text = false,
-			float = {
-				border = "single",
-			},
-		})
-
 		-- Add border to floating window
 		vim.lsp.handlers["textDocument/signatureHelp"] =
 			vim.lsp.with(vim.lsp.handlers.hover, { border = "single", silent = true })
