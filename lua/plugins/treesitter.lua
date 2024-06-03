@@ -1,5 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		"windwp/nvim-ts-autotag",
+	},
 	build = ":TSUpdate",
 	config = function()
 		local tsConfig = require("nvim-treesitter.configs")
@@ -20,5 +23,6 @@ return {
 				vim.treesitter.language.register("angular", "angular.html") -- Register the filetype with treesitter for the `angular` language/parser
 			end,
 		})
+		require("nvim-ts-autotag").setup({})
 	end,
 }
